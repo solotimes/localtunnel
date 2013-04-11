@@ -29,8 +29,8 @@ def run():
         default='8001')
     args = parser.parse_args()
     
-    frontend_address, frontend_hostname = util.parse_address(args.frontend)
-    backend_address, backend_hostname = util.parse_address(args.backend)
+    frontend_address, frontend_hostname = util.parse_address(args.frontend,default_ip='0.0.0.0')
+    backend_address, backend_hostname = util.parse_address(args.backend,default_ip='0.0.0.0')
 
     logging.info("starting frontend on {0} for {1}...".format(
         frontend_address, frontend_hostname))
